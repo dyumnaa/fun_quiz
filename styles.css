@@ -1,22 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url("https://cdn.openart.ai/stable_diffusion/f2acd5c3d5b04980214fcbcba682592b90908670_2000x2000.webp");
-    background-size: cover;
-    background-position:center ;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column;
-}
-
+    flex-direction: column;  }
 
 h1 {
-    color:#ffffff;
-    text-align: center;
-    margin-bottom:20px;
+    color: #ffffff;
+    text-align: center; 
+    margin-bottom: 20px; 
 }
 
 .quiz-container {
@@ -25,7 +20,7 @@ h1 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 400px;
-    margin: auto;
+    width: 100%;
     text-align: left;
 }
 
@@ -56,5 +51,5 @@ button {
 
 button:hover {
     background-color: #ff0000;
-    transform: scale(1.05);
-}
+    transform: scale(1.05);
+        }
