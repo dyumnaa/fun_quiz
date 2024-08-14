@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background image:url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F346040%2FJoes_Diner%2F&psig=AOvVaw2RsaGi4PGANlRicN_LqSpo&ust=1723743969207000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCxjPOE9YcDFQAAAAAdAAAAABAD");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #ff6347;
+    text-align: center;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+.question {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 1em;
+    color: #333333;
+    cursor: pointer;
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<center><h3>*FUN FACT QUIZ*</h3></center>
-<center><p>Do you want to play?</p></center>
-<center><p>
-    <span class="yes">Yes</span>
-    <span class="no">No</span>
-</p></center>
+    <h1>Fun Fact Quiz</h1>
+    <div class="quiz-container">
+        <p class="question">What is the capital of France?</p>
+        <form>
+            <input type="radio" id="answer1" name="answer" value="Paris">
+            <label for="answer1">Paris</label><br>
+            <input type="radio" id="answer2" name="answer" value="London">
+            <label for="answer2">London</label><br>
+            <input type="radio" id="answer3" name="answer" value="Berlin">
+            <label for="answer3">Berlin</label><br>
+            <input type="radio" id="answer4" name="answer" value="Rome">
+            <label for="answer4">Rome</label><br>
+            <button type="submit">Submit Answer</button>
+        </form>
+    </div>
 </body>
 </html>
