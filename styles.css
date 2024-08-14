@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/01KovalamBeach%26Kerala.jpg/220px-01KovalamBeach%26Kerala.jpg");
+    background-image: url("https://cdn.openart.ai/stable_diffusion/f2acd5c3d5b04980214fcbcba682592b90908670_2000x2000.webp");
     background-size: cover;
     background-position:center ;
     background-repeat: no-repeat;
@@ -12,9 +12,8 @@ body {
 }
 
 
-
 h1 {
-    color: #ff6347;
+    color:#ffffff;
     text-align: center;
 }
 
@@ -44,7 +43,7 @@ label {
 }
 
 button {
-    background-color: #ff6347;
+    background-color: #f10404;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -54,6 +53,6 @@ button {
 }
 
 button:hover {
-    background-color: #ff4500;
+    background-color: #ff0000;
     transform: scale(1.05);
 }
