@@ -1,12 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/01KovalamBeach%26Kerala.jpg/220px-01KovalamBeach%26Kerala.jpg");
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
+
+
 
 h1 {
     color: #ff6347;
