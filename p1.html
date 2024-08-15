@@ -9,14 +9,17 @@
 <body>
     <h1>WOULD YOU SURVIVE?</h1>
     <div class="quiz-container">
-        <p class="question">It's night time.You're driving but it's snowing heavily.You see a diner nearby with the light on</p>
-        <form>
-            <input type="radio" id="answer1" name="answer" value="Paris">
-            <label for="answer1">Keep driving</label><br>
-            <input type="radio" id="answer2" name="answer" value="London">
-            <label for="answer2">Go to the diner</label><br>
-            <button type="submit">Submit Answer</button>
+        <form id="quizForm">
+            <fieldset>
+                <legend id="question">It's night time. You're driving, but it's snowing heavily. You see a diner nearby with the light on.</legend>
+                <input type="radio" id="answer1" name="answer" value="keepDriving">
+                <label for="answer1" id="label1">Keep driving</label><br>
+                <input type="radio" id="answer2" name="answer" value="goToDiner">
+                <label for="answer2" id="label2">Go to the diner</label><br>
+                <button type="submit">Submit Answer</button>
+            </fieldset>
         </form>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
