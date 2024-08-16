@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Storyboard Game</title>
+    <title>Interactive Story</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>WOULD YOU SURVIVE?</h1>
     <div class="quiz-container">
+        <h2 id="question">Press Start to Begin the Story</h2>
         <form id="quizForm">
-            <fieldset>
-                <legend id="question">Do you want to play?</legend>
-                <div id="answer-container">
-                    <input type="radio" id="answer1" name="answer" value="0">
-                    <label for="answer1" id="label1">YES</label><br>
-                    <input type="radio" id="answer2" name="answer" value="1">
-                    <label for="answer2" id="label2">NO</label><br>
-                </div>
-                <button type="submit" id="nextButton">Submit Answer</button>
-            </fieldset>
+            <label id="answer1-label">
+                <input type="radio" id="answer1" name="answer" value="">
+                <span id="label1"></span>
+            </label><br>
+            <label id="answer2-label">
+                <input type="radio" id="answer2" name="answer" value="">
+                <span id="label2"></span>
+            </label><br>
+            <label id="answer3-label" style="display:none;">
+                <input type="radio" id="answer3" name="answer" value="">
+                <span id="label3"></span>
+            </label><br>            
+            <button type="submit">Next</button>
         </form>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

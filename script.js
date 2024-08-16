@@ -7,39 +7,47 @@ const questions = [
         ]
     },
     {
-        question: "You died. Your car broke down, and you froze to death in the snow.",
-        answers: [{ text: "Game Over", nextQuestionIndex: 8 }]
-    },
-    {
-        question: "You survived. You leave your car and enter the Diner.",
-        answers: [{ text: "Continue", nextQuestionIndex: 3 }]
-    },
-    {
-        question: "A waiter takes you to your table, but he has no face and only a giant mouth full of sharp teeth. Everyone else sitting in the Diner has black eyes. They all turn to look at you...",
-        answers: [{ text: "Continue", nextQuestionIndex: 4 }]
-    },
-    {
-        question: "The waiter puts a jug of water on your table. What do you do?",
+        question: "You died. Do you want to restart the game?",
         answers: [
-            { text: "Take a sip of the water to be polite", nextQuestionIndex: 5 },
-            { text: "Smile and look at the Menu", nextQuestionIndex: 6 },
-            { text: "Ask the waiter why he has no face", nextQuestionIndex: 7 }
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
         ]
     },
     {
-        question: "The bugs inside the water ate your throat.",
-        answers: [{ text: "Game Over", nextQuestionIndex: 8 }]
+        question: "You survived. You leave the car and enter the diner.",
+        answers: [
+            { text: "Next", nextQuestionIndex: 3 }
+        ]
     },
     {
-        question: "You survived for now...",
-        answers: [{ text: "Continue", nextQuestionIndex: 8 }]
+        question: "A waiter takes you to your table, but he has no face and only a giant mouth full of sharp teeth. Everyone else sitting in the diner has black eyes. They all turn to look at you...",
+        answers: [
+            { text: "Next", nextQuestionIndex: 4 }
+        ]
     },
     {
-        question: "The waiter dragged you into the kitchen and boiled you alive.",
-        answers: [{ text: "Game Over", nextQuestionIndex: 8 }]
+        question: "The waiter puts a jug on your table. What do you do?",
+        answers: [
+            { text: "Take a sip of the water", nextQuestionIndex: 5 },
+            { text: "Smile and look at the menu", nextQuestionIndex: 6 },
+            { text: "Ask the waiter why he has no face", nextQuestionIndex: 5 }
+        ]
     },
     {
-        question: "GAME OVER",
+        question: "You died. Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
+    },
+    {
+        question: "You survived for now.",
+        answers: [
+            { text: "Next", nextQuestionIndex: 7 }
+        ]
+    },
+    {
+        question: "You've completed the story!",
         answers: []
     }
 ];
@@ -50,40 +58,31 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     document.getElementById("question").textContent = currentQuestion.question;
-    
-    // Hide all answer options initially
-    document.getElementById("answer-container").style.display = "none";
-    
-    // Clear previous answer options
-    const answerContainer = document.getElementById("answer-container");
-    answerContainer.innerHTML = '';
 
+    // Hide all answer labels initially
+    document.getElementById("answer1-label").style.display = "none";
+    document.getElementById("answer2-label").style.display = "none";
+    document.getElementById("answer3-label").style.display = "none";
+
+    // Show answer choices if they exist
     if (currentQuestion.answers.length > 0) {
-        // Show answer container
-        answerContainer.style.display = "block";
-        
-        // Dynamically create answer options
-        currentQuestion.answers.forEach((answer, index) => {
-            const input = document.createElement('input');
-            input.type = 'radio';
-            input.id = `answer${index}`;
-            input.name = 'answer';
-            input.value = answer.nextQuestionIndex;
-            
-            const label = document.createElement('label');
-            label.htmlFor = `answer${index}`;
-            label.textContent = answer.text;
+        if (currentQuestion.answers.length > 0) {
+            document.getElementById("answer1-label").style.display = "block";
+            document.getElementById("label1").textContent = currentQuestion.answers[0].text;
+            document.getElementById("answer1").value = currentQuestion.answers[0].nextQuestionIndex;
+        }
 
-            answerContainer.appendChild(input);
-            answerContainer.appendChild(label);
-            answerContainer.appendChild(document.createElement('br'));
-        });
+        if (currentQuestion.answers.length > 1) {
+            document.getElementById("answer2-label").style.display = "block";
+            document.getElementById("label2").textContent = currentQuestion.answers[1].text;
+            document.getElementById("answer2").value = currentQuestion.answers[1].nextQuestionIndex;
+        }
 
-        // Change the button text
-        document.getElementById("nextButton").textContent = "Submit Answer";
-    } else {
-        // Change the button text for paragraph
-        document.getElementById("nextButton").textContent = "Next";
+        if (currentQuestion.answers.length === 3) {
+            document.getElementById("answer3-label").style.display = "block";
+            document.getElementById("label3").textContent = currentQuestion.answers[2].text;
+            document.getElementById("answer3").value = currentQuestion.answers[2].nextQuestionIndex;
+        }
     }
 }
 
@@ -94,18 +93,26 @@ document.getElementById("quizForm").addEventListener("submit", function(event) {
     // Get the selected answer's index
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
     if (selectedAnswer) {
-        currentQuestionIndex = parseInt(selectedAnswer.value);
-    } else if (questions[currentQuestionIndex].answers.length === 0) {
-        // Move to the next question if it's a paragraph with no options
-        currentQuestionIndex++;
-    }
+        const selectedIndex = parseInt(selectedAnswer.value);
 
-    if (currentQuestionIndex < questions.length) {
-        displayQuestion();
-    } else {
-        document.querySelector(".quiz-container").innerHTML = "<h2>You've completed the story!</h2>";
+        if (selectedIndex === -1) {
+            document.querySelector(".quiz-container").innerHTML = "<h2>Game Over</h2><button onclick='restartGame()'>Restart</button>";
+        } else {
+            currentQuestionIndex = selectedIndex;
+            if (currentQuestionIndex >= 0 && currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                document.querySelector(".quiz-container").innerHTML = "<h2>Game Over</h2>";
+            }
+        }
     }
 });
+
+// Function to restart the game
+function restartGame() {
+    currentQuestionIndex = 0;
+    displayQuestion();
+}
 
 // Initial call to display the first question
 displayQuestion();
