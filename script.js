@@ -13,14 +13,14 @@ const questions = [
     }
 ];
 
-let currentQuestion = 0;
+let currentQuestion = -1;
 
 document.getElementById("quizForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
     currentQuestion++;
 
-    if (currentQuestion < questions.length) {
+    if (currentQuestion <= questions.length) {
         document.getElementById("question").textContent = questions[currentQuestion].question;
         document.getElementById("label1").textContent = questions[currentQuestion].answers[0];
         document.getElementById("label2").textContent = questions[currentQuestion].answers[1];
