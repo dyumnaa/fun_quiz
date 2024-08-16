@@ -12,11 +12,13 @@
         <form id="quizForm">
             <fieldset>
                 <legend id="question">Do you want to play?</legend>
-                <input type="radio" id="answer1" name="answer" value="YES">
-                <label for="answer1" id="label1">YES</label><br>
-                <input type="radio" id="answer2" name="answer" value="NO">
-                <label for="answer2" id="label2">NO</label><br>
-                <button type="submit">Submit Answer</button>
+                <div id="answer-container">
+                    <input type="radio" id="answer1" name="answer" value="0">
+                    <label for="answer1" id="label1">YES</label><br>
+                    <input type="radio" id="answer2" name="answer" value="1">
+                    <label for="answer2" id="label2">NO</label><br>
+                </div>
+                <button type="submit" id="nextButton">Submit Answer</button>
             </fieldset>
         </form>
     </div>
