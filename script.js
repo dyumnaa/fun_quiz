@@ -7,7 +7,7 @@ const questions = [
         ]
     },
     {
-        question: "You died. Do you want to restart the game?",
+        question: "Your car broke down, and you froze to death in the snow...You died.Do you want to restart the game?",
         answers: [
             { text: "Yes", nextQuestionIndex: 0 },
             { text: "No", nextQuestionIndex: -1 } 
@@ -30,25 +30,92 @@ const questions = [
         answers: [
             { text: "Take a sip of the water", nextQuestionIndex: 5 },
             { text: "Smile and look at the menu", nextQuestionIndex: 6 },
-            { text: "Ask the waiter why he has no face", nextQuestionIndex: 5 }
+            { text: "Ask the waiter why he has no face", nextQuestionIndex: 7 }
         ]
     },
     {
-        question: "You died. Do you want to restart the game?",
+        question: "The bugs inside the water ate your throat..You died. Do you want to restart the game?",
         answers: [
             { text: "Yes", nextQuestionIndex: 0 },
             { text: "No", nextQuestionIndex: -1 } // -1 will end the game
         ]
     },
     {
-        question: "You survived for now.",
+        question: "You survived for now...",
         answers: [
-            { text: "Next", nextQuestionIndex: 7 }
+            { text: "Next", nextQuestionIndex: 8 }
         ]
     },
     {
-        question: "You've completed the story!",
-        answers: []
+        question: "The waiter dragged you into the kitchen and boiled you alive...You died. Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
+    },
+    {
+        question:"As you're looking at the menu,a girl from the table behind stands up and walks towards you.You see her eyes are normal.She hands you a note...",
+        answers: [
+            {text: "Take the note and ask her how to escape",nextQuestionIndex:9 },
+            {text: "Take the note and hide it",nextQuestionIndex:10},
+            {text: "Take the note and read it",nextQuestionIndex:11}
+        ]
+    },
+    {
+        question: "They heard you.They know you don't belong so they cut all your limbs off and hung them up with meat hooks...You died. Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
+    },
+    {
+        question: "You survived for now...",
+        answers: [{text: "Continue", nextQuestionIndex: 12}]
+    },
+    {
+        question: "The girl starts screaming.The waiter ties you and the girl together and shoves you in the oven to cook you...You died. Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
+    },
+    {
+        question: "The note says:'Front door is a trap.Escape is in the kitchen.'The girl points to the kitchen,hinting that you should follow her inside.Do you trust her?",
+        answers: [
+            {text: "Yes,stand up and follow her to the kitchen", nextQuestionIndex:13},
+            {text: "No,stay at your table and ignore her", nextQuestionIndex:14},
+            {text: "No,but invite her to sit at your table", nextQuestionIndex:15},
+        ]
+    },
+    {
+        question: "The waiter caught you and removed your eyeballs with an cream scooper...You died. Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
+    },
+    {
+        question:"You survived,but you're drawing attention.The other guests are staring at you both...",
+        answers: [{text: "Continue", nextQuestionIndex:16}]
+    },
+    {
+        question:"You survived.Now you must escape together...",
+        answers: [{text: "Continue", nextQuestionIndex:16}]
+    },
+    {
+        question:"As you're sitting with the girl,the waiter comes back and puts a plate of food in front of you...",
+        answers: [
+            {text: "Eat the food", nextQuestionIndex:17},
+            {text: "Say that isn't what you ordered", nextQuestionIndex:17},
+            {text: "Smile and keep the food on your table but don't eat it", nextQuestionIndex:17},
+        ]
+    },
+    {
+        question: "You've completed the story! Do you want to restart the game?",
+        answers: [
+            { text: "Yes", nextQuestionIndex: 0 },
+            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+        ]
     }
 ];
 
