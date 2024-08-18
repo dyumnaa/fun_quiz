@@ -10,7 +10,7 @@ const questions = [
         question: "You died. Do you want to restart the game?",
         answers: [
             { text: "Yes", nextQuestionIndex: 0 },
-            { text: "No", nextQuestionIndex: -1 } // -1 will end the game
+            { text: "No", nextQuestionIndex: -1 } 
         ]
     },
     {
