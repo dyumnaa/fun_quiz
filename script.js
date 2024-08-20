@@ -119,12 +119,18 @@ const questions = [
     }
 ];
 
+
+
 let currentQuestionIndex = 0;
 
-// Function to display a question and its answers
 function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     document.getElementById("question").textContent = currentQuestion.question;
+
+    // Ensure the quiz container size remains fixed
+    const quizContainer = document.querySelector(".quiz-container");
+    quizContainer.style.maxWidth = "400px"; 
+    quizContainer.style.height = "400px"; 
 
     // Hide all answer labels initially
     document.getElementById("answer1-label").style.display = "none";
@@ -153,11 +159,9 @@ function displayQuestion() {
     }
 }
 
-// Function to handle the form submission
 document.getElementById("quizForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Get the selected answer's index
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
     if (selectedAnswer) {
         const selectedIndex = parseInt(selectedAnswer.value);
@@ -175,10 +179,9 @@ document.getElementById("quizForm").addEventListener("submit", function(event) {
     }
 });
 
-// Function to restart the game
 function restartGame() {
-    currentQuestionIndex = 0;
-    displayQuestion();
+    currentQuestionIndex = 0; // Reset the question index to 0
+    displayQuestion(); // Display the first question
 }
 
 // Initial call to display the first question
